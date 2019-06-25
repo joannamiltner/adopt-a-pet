@@ -13,7 +13,7 @@ class List extends Component {
 
 
         componentDidMount = () => {
-            axios.get("http://localhost:8000/api/pets")
+            axios.get("/api/pets")
             .then( res =>{
                 console.log(res);
                 this.setState({pets: res.data.pets});

@@ -13,7 +13,7 @@ export class Details extends Component{
 
     componentDidMount=() =>{
         console.log(this.props.match.params._id);
-        axios.get(`http://localhost:8000/api/pets/${this.props.match.params._id}`)
+        axios.get(`/api/pets/${this.props.match.params._id}`)
         .then(res =>{
             this.setState({pet: res.data.pet});
         })
@@ -23,7 +23,7 @@ export class Details extends Component{
     }
 
     delete=(_id) =>{
-        axios.delete(`http://localhost:8000/api/pets/${this.props.match.params._id}`)
+        axios.delete(`/api/pets/${this.props.match.params._id}`)
         .then(res =>{
             console.log(res);
             this.props.history.push("/");
